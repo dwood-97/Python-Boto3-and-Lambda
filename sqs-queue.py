@@ -1,16 +1,16 @@
 import boto3
 import time
 
-def create_sns_topic(sns = None):
-    if sns is None:
-        sns = boto3.client("sns")
+def create_message_queue(sqs = None):
+    if sqs is None:
+        sqs = boto3.client("sqs")
         
 
-    response = sns.create_topic(Name='Publish_Message')
-    print("Creating Topic...")
+    response = sqs.create_queue(QueueName='Message_In')
+    print("Creating Queue...")
     time.sleep(3)
     return response
     
 if __name__ == '__main__':
-    Publish_Message = create_sns_topic()
-    print("Topic Created")
+    Message_In = create_message_queue()
+    print("Queue Created")
