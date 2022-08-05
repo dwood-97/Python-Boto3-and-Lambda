@@ -8,7 +8,7 @@ def create_sns_topic(sns = None):
 
     response = sns.create_topic(Name='Publish_Message')
     print("Creating Topic...")
-    time.sleep(1)
+    time.sleep(3)
     return response
     
 if __name__ == '__main__':
